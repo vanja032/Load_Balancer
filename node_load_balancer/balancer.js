@@ -1,9 +1,10 @@
 const express = require("express");
 const morgan = require("morgan");
+const cores_number = require("os").cpus().length;
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const urls = require("./balancer/data/urls");
-const max_requests_per_url = process.env.MAX_REQUESTS;
+const max_requests_per_url = Math.floor(parseInt(process.env.MAX_REQUESTS) / cores_number);
 
 const balancer = express();
 balancer.use(morgan("dev"));
