@@ -1,0 +1,364 @@
+GET /v1/chain/get_info 200 267.633 ms - 795
+GET /v1/chain/get_info 200 263.427 ms - 795
+GET /v1/chain/get_info 200 267.595 ms - 795
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 292.709 ms - 795
+GET /v1/chain/get_info 200 297.120 ms - 795
+GET /v1/chain/get_info 200 311.341 ms - 795
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 65837.868 ms - 795
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 501.995 ms - 796
+GET /v1/chain/get_info 200 570.089 ms - 796
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 275.925 ms - 796
+GET /v1/chain/get_info 200 280.708 ms - 796
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 268.592 ms - 796
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 274.249 ms - 796
+{
+  '<url1>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns1>',
+    ip: '<ip1>',
+    performance_health: {
+      alive: true,
+      performance: 43.10299400240183,
+      health_status: 'good'
+    }
+  },
+  '<url2>': {
+    requests: 1,
+    protocol: 'https:',
+    dns: '<dns2>',
+    ip: '<ip2>',
+    performance_health: {
+      alive: true,
+      performance: 42.37200599908829,
+      health_status: 'good'
+    }
+  },
+  '<url3>': {
+    requests: 0,
+    protocol: 'https:',
+    dns: '<dns3>',
+    ip: '<ip3>',
+    performance_health: {
+      alive: true,
+      performance: 123.84727000445127,
+      health_status: 'good'
+    }
+  }
+}
+GET /v1/chain/get_info 200 269.537 ms - 796
