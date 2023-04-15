@@ -46,11 +46,11 @@ const getNextTarget = () => {
             }
             else if (serversHealth[url] != undefined) {
                 if (nextTarget == null) {
-                    if (serversHealth[url]["alive"]) {
+                    if (serversHealth[url]["alive"] && serversHealth[url]["health_status"] != "bad") {
                         nextTarget = url;
                     }
                 }
-                else if (serversHealth[url]["performance"] < serversHealth[nextTarget]["performance"] && serversHealth[url]["alive"]) {
+                else if (serversHealth[url]["performance"] < serversHealth[nextTarget]["performance"] && serversHealth[url]["alive"] && serversHealth[url]["health_status"] != "bad") {
                     nextTarget = url;
                 }
             }
