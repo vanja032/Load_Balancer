@@ -1,3 +1,4 @@
+const cluster = require("cluster");
 const express = require("express");
 const morgan = require("morgan");
 const cores_number = require("os").cpus().length;
@@ -5,7 +6,8 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const urls = require("./balancer/data/urls");
 const { url } = require("inspector");
-const max_requests_per_url = Math.floor(parseInt(process.env.MAX_REQUESTS) / cores_number); // Max number of requests per single core for single url address
+var max_requests_per_url = Math.floor(parseInt(process.env.MAX_REQUESTS) / cores_number); // Max number of requests per single core for single url address
+var mainProcessId = 0;
 var serversHealth = null;
 
 const balancer = express();
@@ -42,8 +44,9 @@ for (const url in urls) {
 const getNextTarget = () => {
     var nextTarget = null;
     for (const url in urls) {
+        const max_per_url = (mainProcessId == cluster.worker.id) ? Math.floor(urls[url]["max_requests"] / cores_number) + urls[url]["max_requests"] % cores_number : Math.floor(urls[url]["max_requests"] / cores_number);
         // Implement the logic for making a decision about appropriate target server based on server health status and performance, as well as the number of requests
-        if (urls[url]["requests"] < max_requests_per_url && urls[url]["requests"] < Math.floor(urls[url]["max_requests"] / cores_number) && urls[url]["active"]) {
+        if (urls[url]["requests"] < max_requests_per_url && urls[url]["requests"] < max_per_url && urls[url]["active"]) {
             if (nextTarget == null && serversHealth == null) {
                 return url;
             }
@@ -91,6 +94,13 @@ balancer.use("/", (request, response, next) => {
 });
 
 process.on("message", (data) => {
+    if (data.hasOwnProperty("main_subprocess")) {
+        mainProcessId = data["main_subprocess"];
+
+        if (data["main_subprocess"] == cluster.worker.id) {
+            max_requests_per_url = Math.floor(parseInt(process.env.MAX_REQUESTS) / cores_number) + parseInt(process.env.MAX_REQUESTS) % cores_number;
+        }
+    }
     if (data.hasOwnProperty("servers_health")) {
         serversHealth = data["servers_health"];
         for (const url in urls) {

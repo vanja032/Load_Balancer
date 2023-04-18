@@ -4,6 +4,7 @@ import "../types/interfaces";
 interface Props extends Server {
   url: string;
   onChangeActiveStatus: (url: string, activeState: boolean) => void;
+  onChangeMaxRequests: (url: string, maxRequests: number) => void;
 }
 
 const ServerColumn = (server: Props) => {
@@ -19,6 +20,7 @@ const ServerColumn = (server: Props) => {
         active={server.active}
         performance_health={server.performance_health}
         onChangeActiveStatus={server.onChangeActiveStatus}
+        onChangeMaxRequests={server.onChangeMaxRequests}
       />
     </div>
   );

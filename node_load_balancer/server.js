@@ -15,6 +15,7 @@ if (cluster.isMaster) {
     for (let i = 0; i < available_cores; i++) {
         const subprocess = cluster.fork();
         processes.push(subprocess);
+        subprocess.send({ main_subprocess: processes[0].id });
     }
     serverHealth.setProcesses(processes);
     serverHealth.checker();
@@ -29,6 +30,10 @@ if (cluster.isMaster) {
 
         dataSync.unsetCluster(worker.id);
         dataSync.setClusters(processes);
+
+        for (let i = 0; i < processes.length; i++) {
+            processes[i].send({ main_subprocess: processes[0].id });
+        }
     });
 }
 else {

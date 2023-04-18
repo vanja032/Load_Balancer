@@ -2,12 +2,14 @@ import server_icon from "../assets/media/server_icon2.png";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "../types/interfaces";
+import { useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface Props extends Server {
   url: string;
   onChangeActiveStatus: (url: string, activeState: boolean) => void;
+  onChangeMaxRequests: (url: string, maxRequests: number) => void;
 }
 
 const colors = {
@@ -36,6 +38,9 @@ const ServerCard = (server: Props) => {
       },
     ],
   };
+
+  var [maxRequests, setMaxRequests] = useState(server.max_requests);
+
   return (
     <div className="card bg-dark2" style={{ height: 100 + "%" }}>
       <div className="card-header">
@@ -74,7 +79,24 @@ const ServerCard = (server: Props) => {
             Requests: {server.requests}
           </li>
           <li className="list-group-item bg-dark3 tx-white">
-            Max requests: {server.max_requests}
+            <div className="row">
+              <div className="col">Max requests: {server.max_requests}</div>
+              <div className="col">
+                <input
+                  type="range"
+                  className="form-range"
+                  min="0"
+                  max="1000000"
+                  defaultValue={server.max_requests}
+                  onChange={(event) => {
+                    server.onChangeMaxRequests(
+                      server.url,
+                      parseInt(event.target.value)
+                    );
+                  }}
+                />
+              </div>
+            </div>
           </li>
           <li className="list-group-item bg-dark3 tx-white">
             Status:{" "}
