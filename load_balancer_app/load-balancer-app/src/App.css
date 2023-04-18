@@ -1,0 +1,44 @@
+body, html{
+  background-color: #393a3f;
+}
+
+.bg-dark1{
+  background-color: #393a3f !important;
+}
+
+.bg-dark2{
+  background-color: #212226 !important;
+}
+
+.bg-dark3{
+  background-color: #434343 !important;
+}
+
+.tx-yellow{
+  color: #f5b352 !important;
+}
+
+.tx-white{
+  color: white !important;
+}
+
+.card{
+  width: 100%;
+}
+
+.server-icon{
+  width: 30px;
+  margin: 10px;
+}
+
+.server-status{
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.activate-button{
+  width: 100%;
+}

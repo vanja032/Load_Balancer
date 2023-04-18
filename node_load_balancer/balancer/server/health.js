@@ -8,7 +8,7 @@ const pingOptions = {
     timeout: 2 // Timeout in seconds (optional, default is 5 seconds)
 };
 
-const setSubprocesses = (processes) => {
+const setProcesses = (processes) => {
     subprocesses = processes;
 };
 
@@ -17,7 +17,7 @@ const healthChecker = () => {
 };
 
 const updateHealth = async () => {
-    for(const url in urls){
+    for (const url in urls) {
         const startTime = performance.now();
         await new Promise(resolve => {
             ping.sys.probe(`${urls[url]["ip"]}`, (isAlive) => {
@@ -32,9 +32,9 @@ const updateHealth = async () => {
             }, pingOptions);
         });
     }
-    if(subprocesses.length){
-        for(let i = 0; i < subprocesses.length; i++){
-            subprocesses[i].send({servers_health: trackingHealth});
+    if (subprocesses.length) {
+        for (let i = 0; i < subprocesses.length; i++) {
+            subprocesses[i].send({ servers_health: trackingHealth });
         }
     }
     setTimeout(updateHealth, 15000);
@@ -42,6 +42,6 @@ const updateHealth = async () => {
 
 
 module.exports = {
-    setProcesses: setSubprocesses,
+    setProcesses: setProcesses,
     checker: healthChecker
 };
