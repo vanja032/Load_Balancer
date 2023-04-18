@@ -1,4 +1,4 @@
-import server_icon from "../assets/media/server_icon2.png";
+import server_icon from "../assets/media/server_icon3.png";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "../types/interfaces";
