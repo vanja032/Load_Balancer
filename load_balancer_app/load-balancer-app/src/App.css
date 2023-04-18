@@ -14,6 +14,10 @@ body, html{
   background-color: #434343 !important;
 }
 
+.bg-dark4::after{
+  background-color: #212226 !important;
+}
+
 .tx-yellow{
   color: #f5b352 !important;
 }

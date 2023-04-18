@@ -4,6 +4,7 @@ import "./types/interfaces";
 import ServerColumn from "./components/ServerColumn";
 
 import "./App.css";
+import "./assets/style/style.css";
 
 const syncHost: string = "localhost";
 const syncPort: number = 3030;

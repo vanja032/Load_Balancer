@@ -1,12 +1,41 @@
 import server_icon from "../assets/media/server_icon2.png";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
 import "../types/interfaces";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface Props extends Server {
   url: string;
   onChangeActiveStatus: (url: string, activeState: boolean) => void;
 }
 
+const colors = {
+  success: "#bde45c",
+  warning: "#eee318",
+  danger: "#ee1818",
+  bcolor: "#404040",
+};
+
 const ServerCard = (server: Props) => {
+  const ratio = Number((server.requests / server.max_requests).toFixed(2));
+  const data = {
+    datasets: [
+      {
+        data: [ratio, 1 - ratio],
+        backgroundColor: [
+          ratio < 0.5
+            ? colors.success
+            : ratio < 0.8
+            ? colors.warning
+            : colors.danger,
+          colors.bcolor,
+        ],
+        borderWidth: 0,
+        cutout: "90%",
+      },
+    ],
+  };
   return (
     <div className="card bg-dark2" style={{ height: 100 + "%" }}>
       <div className="card-header">
@@ -21,10 +50,31 @@ const ServerCard = (server: Props) => {
         </div>
       </div>
       <div className="card-body d-flex flex-column justify-content-between">
+        <div className="m-4 p-4 mt-0 position-relative d-flex justify-content-between">
+          <div
+            className="doughnut-chart-text"
+            style={{
+              color:
+                ratio < 0.5
+                  ? colors.success
+                  : ratio < 0.8
+                  ? colors.warning
+                  : colors.danger,
+            }}
+          >
+            {server.requests + " / " + server.max_requests}
+          </div>
+          <div></div>
+          <Doughnut data={data} />
+          <div></div>
+        </div>
         <h5 className="card-title mb-3 tx-yellow">{server.url}</h5>
         <ul className="list-group">
           <li className="list-group-item bg-dark3 tx-white">
             Requests: {server.requests}
+          </li>
+          <li className="list-group-item bg-dark3 tx-white">
+            Max requests: {server.max_requests}
           </li>
           <li className="list-group-item bg-dark3 tx-white">
             Status:{" "}
