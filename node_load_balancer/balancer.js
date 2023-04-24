@@ -25,7 +25,7 @@ for (const url in urls) {
         changeOrigin: true,
         onProxyReq: (proxy_request, request, response) => {
             const target_url = `${proxy_request.protocol}//${proxy_request.host}`;
-            console.log(`Incoming request for: ${target_url}`);
+            console.log(`Incoming request for host: ${target_url}`);
             urls[target_url]["requests"] += 1;
             //console.log(urls);
             process.send({ urls: urls });
@@ -33,9 +33,19 @@ for (const url in urls) {
         },
         onProxyRes: (proxy_response, request, response) => {
             const target_url = `${response.getHeader("X-Target-URL")}`;
-            console.log(`Incoming result from: ${target_url}`);
+            console.log(`Incoming result from host: ${target_url}`);
             if (urls[target_url]["requests"] > 0) urls[target_url]["requests"] -= 1;
             process.send({ urls: urls });
+        },
+        onError: (error, request, response) => {
+            const target_url = `${response.getHeader("X-Target-URL")}`;
+            console.log(`Error from host: ${target_url}`);
+            if (urls[target_url]["requests"] > 0) urls[target_url]["requests"] -= 1;
+            process.send({ urls: urls });
+            response.writeHead(500, {
+                "Content-Type": "application/json"
+            });
+            response.end(JSON.stringify({ error: { message: "The targeted host is not responding or the url is not accessible. Try again later." } }));
         }
     });
 }
