@@ -31,7 +31,10 @@ It includes monitoring the next resources for every node:
   ```
   
 #### Loading Screen
-![alt text](https://raw.githubusercontent.com/vanja032/Load_Balancer/main/Screens/Screen_01.png)
+![Loading Screen](https://raw.githubusercontent.com/vanja032/Load_Balancer/main/Screens/Screen_01.png)
 
 #### Panel Screen
-![alt text](https://raw.githubusercontent.com/vanja032/Load_Balancer/main/Screens/Screen_02.png)
+![Panel Screen](https://raw.githubusercontent.com/vanja032/Load_Balancer/main/Screens/Screen_02.png)
+
+#### Load Balancer Architecture Scheme
+![Load Balancer Architecture Scheme](https://raw.githubusercontent.com/vanja032/Load_Balancer/main/Scheme/balancer_scheme.png)
